@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pig Game</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="container center-el">
+        <div class="player-wrapper flex-wrapper">
+          <div class="player-section center-el player-0 player-active">
+            <div class="text">
+              <h2 class="name name-0">Player 1</h2>
+              <p class="score score-0">60</p>
+            </div>
+            <div class="current-score-wrapper">
+              <p class="title">Current Score</p>
+              <p class="current-score current-0">0</p>
+            </div>
+          </div>
+          <div class="player-section center-el player-1">
+            <div class="text">
+              <h2 class="name name-1">Player 2</h2>
+              <p class="score score-1">25</p>
+            </div>
+            <div class="current-score-wrapper">
+              <p class="title">Current Score</p>
+              <p class="current-score current-1">0</p>
+            </div>
+          </div>
+        </div>
+        <img class="dice-img" src="images/dice-6.png" alt="" />
+
+        <button class="btn btn-new">
+          <i class="fas fa-recycle icon"></i>Restart
+        </button>
+        <button class="btn btn-gameInfo">
+          <i class="icon"></i>How to play
+        </button>
+        <button class="btn btn-roll">
+          <i class="fas fa-dice icon"></i>Roll
+        </button>
+        <button class="btn btn-hold">
+          <i class="fas fa-hand-paper icon"></i>hold
+        </button>
+
+        <div class="card">
+          <!-- <p class="colour-title">Pick a Colour</p> -->
+          <ul class="colour-list">
+            <li class="colour-item col-1" id="col-1"></li>
+            <li class="colour-item col-2" id="col-2"></li>
+            <li class="colour-item col-3" id="col-3"></li>
+            <li class="colour-item col-4" id="col-4"></li>
+            <li class="colour-item col-5" id="col-5"></li>
+          </ul>
+        </div>
+      </div>
+      <!-- end of container -->
+      <div class="modal">
+        <h3>How to play</h3>
+        <p class="game-intro">
+          Beat your opponent by being the first to get to a final score of 100.
+        </p>
+        <ol>
+          <li>
+            Click on the Roll button to roll the dice. Each roll of the dice
+            will be added to your current score.
+          </li>
+          <li>
+            Rolling a one ,on the dice, will reset your current score to 0 and
+            switch to the next player.
+          </li>
+          <li>
+            To avoid loosing your current score, click the Hold button to save
+            your score.
+          </li>
+          <li>
+            Each time the hold button is clicked, your current score will be
+            added to your total score. The first player to get a total score of
+            100 is the winner.
+          </li>
+        </ol>
+        <i class="fa-solid fa-xmark close"></i>
+      </div>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
