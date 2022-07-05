@@ -23,13 +23,13 @@ const colours = document.querySelectorAll('.colour-item');
 
 const modal = document.querySelector('.modal');
 
-let heldScores, score, activePlayer, continueGame;
+let heldScores, score, continueGame;
+let activePlayer = 0;
 
 const initGame = function () {
   dice.classList.add('hidden');
   scoreP1.textContent = 0;
   scoreP2.textContent = 0;
-  activePlayer = 0;
   score = 0;
   heldScores = [0, 0];
   playerOne.classList.add('player-active');
@@ -37,6 +37,8 @@ const initGame = function () {
   playerOne.classList.remove('player-winner');
   playerTwo.classList.remove('player-winner');
   document.querySelector(`.current-${activePlayer}`).textContent = 0;
+  document.querySelector(`.name-${activePlayer}`).textContent =
+    activePlayer === 0 ? 'Player 1' : 'Player 2';
 
   continueGame = true;
 };
@@ -55,6 +57,7 @@ function checkWinner() {
   document
     .querySelector(`.player-${activePlayer}`)
     .classList.add('player-winner');
+  document.querySelector(`.name-${activePlayer}`).textContent = 'WINNER';
 }
 
 rollBtn.addEventListener('click', function () {
