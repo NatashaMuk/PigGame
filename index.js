@@ -1,6 +1,8 @@
+'use strict';
+
 const playerOne = document.querySelector('.player-0');
 const playerTwo = document.querySelector('.player-1');
-// const name = document.querySelector(`.name-${activePlayer}`)
+
 const scoreP1 = document.querySelector('.score-0');
 const scoreP2 = document.querySelector('.score-1');
 
@@ -21,19 +23,18 @@ const colours = document.querySelectorAll('.colour-item');
 
 const modal = document.querySelector('.modal');
 
-let heldScores = [0, 0];
-let score = 0;
-let activePlayer = 0;
-let continueGame = true;
-
-const playerName = document.querySelector(`.name-${activePlayer}`);
+let heldScores, score, activePlayer, continueGame;
 
 const initGame = function () {
   dice.classList.add('hidden');
   scoreP1.textContent = 0;
   scoreP2.textContent = 0;
+  activePlayer = 0;
   score = 0;
-  heldScores[activePlayer] = 0;
+  heldScores = [0, 0];
+  playerOne.classList.add('player-active');
+  playerTwo.classList.remove('player-active');
+
   document.querySelector(`.current-${activePlayer}`).textContent = 0;
   document
     .querySelector(`.player-${activePlayer}`)
