@@ -34,11 +34,10 @@ const initGame = function () {
   heldScores = [0, 0];
   playerOne.classList.add('player-active');
   playerTwo.classList.remove('player-active');
-
+  playerOne.classList.remove('player-winner');
+  playerTwo.classList.remove('player-winner');
   document.querySelector(`.current-${activePlayer}`).textContent = 0;
-  document
-    .querySelector(`.player-${activePlayer}`)
-    .classList.remove('player-winner');
+
   continueGame = true;
 };
 
