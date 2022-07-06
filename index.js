@@ -25,6 +25,7 @@ const modal = document.querySelector('.modal');
 
 let heldScores, score, continueGame;
 let activePlayer = 0;
+const jsConfetti = new JSConfetti();
 
 const initGame = function () {
   dice.classList.add('hidden');
@@ -53,7 +54,21 @@ function switchPlayer() {
   playerTwo.classList.toggle('player-active');
 }
 
+function confetti() {
+  jsConfetti.addConfetti({
+    confettiColors: [
+      '#e23d20',
+      '#127712',
+      '#860586',
+      '#da082b',
+      '#07806b',
+      '#1086ad',
+    ],
+  });
+}
+
 function checkWinner() {
+  confetti();
   document
     .querySelector(`.player-${activePlayer}`)
     .classList.add('player-winner');
@@ -81,7 +96,7 @@ holdBtn.addEventListener('click', () => {
     document.querySelector(`.score-${activePlayer}`).textContent =
       heldScores[activePlayer];
     score = 0;
-    if (heldScores[activePlayer] >= 100) {
+    if (heldScores[activePlayer] >= 10) {
       checkWinner();
       continueGame = false;
     } else {
