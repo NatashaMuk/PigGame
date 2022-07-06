@@ -92,6 +92,7 @@ rollBtn.addEventListener('click', function () {
 
 holdBtn.addEventListener('click', () => {
   if (continueGame) {
+    dice.classList.add('hidden');
     heldScores[activePlayer] += score;
     document.querySelector(`.score-${activePlayer}`).textContent =
       heldScores[activePlayer];
