@@ -96,7 +96,7 @@ holdBtn.addEventListener('click', () => {
     document.querySelector(`.score-${activePlayer}`).textContent =
       heldScores[activePlayer];
     score = 0;
-    if (heldScores[activePlayer] >= 10) {
+    if (heldScores[activePlayer] >= 100) {
       checkWinner();
       continueGame = false;
     } else {
